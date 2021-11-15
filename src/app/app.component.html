@@ -12,7 +12,7 @@
 
   <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
 
-  <div class="btn-wrapper">
+  <!-- <div class="btn-wrapper">
     <button
       class="btn btn-menu"
       [class.active]="table_type == 'table'"
@@ -25,7 +25,7 @@
       (click)="table_type = 'list'">
       Table Form
     </button>
-  </div>
+  </div> -->
 
 
   <div class="btn-wrapper">
@@ -50,8 +50,9 @@
       Done
     </button>
   </div>
+  <a button class="btn btn-menu" routerLink="space-x">Space-X</a>
 
-  
+  <router-outlet></router-outlet> 
 
   <h2>{{items.length}} <span *ngIf="items.length === 1; else elseBlock">item</span>
     <ng-template #elseBlock>items</ng-template></h2>
@@ -61,6 +62,6 @@
         <app-tolist (remove)="remove(item)" [item]="item"></app-tolist>
       </li>
     </ul>
-    
+   
 </div>
 
